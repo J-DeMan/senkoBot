@@ -1,15 +1,15 @@
 const Discord = require('discord.js');
 const secretConfig = require('./config/secretConfig');
-const bot = new Discord.Client();
+const senkoBot = new Discord.Client();
 
-bot.on("ready", () => {
+senkoBot.on("ready", () => {
     console.log('Bot online');
 });
 
-bot.on("message", msg=>{
+senkoBot.on("message", msg=>{
     if (msg.content == "hello") {
         msg.reply("hey");
     }
 });
 
-bot.login(secretConfig.token);
+senkoBot.login(secretConfig.token);
