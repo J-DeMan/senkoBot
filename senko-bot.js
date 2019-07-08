@@ -1,5 +1,6 @@
 // get discord and config resources
 const discord = require('discord.js');
+const mal = require("mal-scraper");
 const secretConfig = require('./config/secretConfig.json');
 const config = require('./config/config.json')
 
