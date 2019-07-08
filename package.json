@@ -2,7 +2,7 @@
   "name": "senko_bot",
   "version": "1.0.0",
   "description": "A discord bot with MAL commands.",
-  "main": "index.js",
+  "main": "senko-bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,7 @@
   "author": "J_DeMan",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "mal-scraper": "^2.6.3"
   }
 }
