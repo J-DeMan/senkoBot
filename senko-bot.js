@@ -21,6 +21,11 @@ senkoBot.on("message", message=>{
             //TODO: help command
             message.reply("Not implemented");
             break;
+        case 'search':
+            mal.getInfoFromName(args[1])
+                .then((data) => message.reply(data.url))
+                .catch((err) => message.reply(err))
+            break;
     }
 });
 
