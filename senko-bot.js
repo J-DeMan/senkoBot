@@ -24,7 +24,28 @@ senkoBot.on("message", message=>{
         case 'search':
             mal.getInfoFromName(message.content.substring(config.prefix.length + 6))
                 .then((data) => message.reply(data.url))
-                .catch((err) => message.reply(err));
+                .catch((err) => console.log(err));
+            break;
+        case 'stats':
+            if (args.length > 2) {
+                message.reply("To many arguments. Should be 1.");
+            } else {
+                console.log(args[1]);
+                mal.getWatchListFromUser(args[1], 'anime')
+                    .then((data) => {
+                        let stats = args[1] + "'s list stats:\n";
+                        stats += "TV shows: " + data.stats.TV + "\n";
+                        stats += "Movies: " + data.stats.Movies + "\n";
+                        stats += "OVAs: " + data.stats.OVA + "\n";
+                        stats += "Specials: " + data.stats.Spcl + "\n";
+                        stats += "Episodes of anime watched: " + data.stats.Eps + "\n";
+                        stats += "Days of anime watched: " + data.stats.Days + "\n";
+                        stats += "Mean score: " + data.stats.MeanScore + "\n";
+                        stats += "Score deviation: " + data.stats.ScoreDev + "\n";
+                        message.reply(stats);
+                    })
+                    .catch((err) => console.log(err));
+            }
             break;
     }
 });

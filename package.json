@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",
-    "mal-scraper": "^2.6.3"
+    "mal-scraper": "^2.5.2"
   }
 }
