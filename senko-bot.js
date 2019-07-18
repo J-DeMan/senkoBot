@@ -30,7 +30,6 @@ senkoBot.on("message", message=>{
             if (args.length > 2) {
                 message.reply("To many arguments. Should be 1.");
             } else {
-                console.log(args[1]);
                 mal.getWatchListFromUser(args[1], 'anime')
                     .then((data) => {
                         let stats = args[1] + "'s list stats:\n";
