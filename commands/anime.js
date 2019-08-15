@@ -2,6 +2,12 @@ const mal = require("mal-scraper");
 
 var anime = function () {};
 
+/**
+ * Searches for an anime by title.
+ *
+ * @param title                 Title to search for.
+ * @returns {Promise<string>}   Anime url.
+ */
 anime.prototype.search = async function (title) {
     let result = "";
     await mal.getInfoFromName(title)

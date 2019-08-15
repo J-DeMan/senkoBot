@@ -2,6 +2,12 @@ const mal = require("mal-scraper");
 
 var user = function () {};
 
+/**
+ * Finds user stats.
+ *
+ * @param id                    User's ID.
+ * @returns {Promise<string>}   User stats.
+ */
 user.prototype.stats = async function (id) {
     let result = "";
     await mal.getWatchListFromUser(id, 'anime')
