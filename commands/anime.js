@@ -1,6 +1,6 @@
 const mal = require("mal-scraper");
 
-var anime = function () {};
+const anime = function () {};
 
 /**
  * Searches for an anime by title.
@@ -9,11 +9,8 @@ var anime = function () {};
  * @returns {Promise<string>}   Anime url.
  */
 anime.prototype.search = async function (title) {
-    let result = "";
-    await mal.getInfoFromName(title)
-        .then((data) => {result = data.url})
-        .catch((err) => {result = err});
-    return result;
+    let data = await mal.getInfoFromName(title);
+    return data.url;
 };
 
 module.exports = new anime();
